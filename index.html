@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#B3261E">
   <title>Buffet Agrario</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -756,7 +757,7 @@
             id="image1" />
         </g>
       </svg>
-      <span>Cocina-</span>
+      <span>Prueba</span>
     </div>
   </nav>
 
@@ -926,6 +927,26 @@
         }, 500);
       }, 500);
     });
+  </script>
+  <script>
+    (function () {
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (!themeMeta) return;
+
+      function applyThemeColor() {
+        const isDark = document.body.classList.contains('dark-mode');
+        themeMeta.setAttribute('content', isDark ? '#121212' : '#B3261E');
+      }
+
+      // Aplicar al cargar
+      applyThemeColor();
+
+      // Escuchar cambios de clase en body (por si Flutter o JS externo cambia el modo)
+      const observer = new MutationObserver(applyThemeColor);
+      observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+      window.addEventListener('load', applyThemeColor);
+    })();
   </script>
 </body>
 
