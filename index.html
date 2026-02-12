@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrario Buffet - Gestión</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <svg viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+               <circle cx="512" cy="512" r="500" fill="#1a1a1a"/>
+               <path d="M256 512h512v100H256z" fill="white" stroke="white" stroke-width="20"/>
+               <path d="M256 350c0-100 100-150 256-150s256 50 256 150H256z" fill="none" stroke="white" stroke-width="25"/>
+               <path d="M200 700h624v100c0 50-50 100-100 100H300c-50 0-100-50-100-100V700z" fill="#b71c1c"/>
+               <text x="512" y="900" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="80">AGRARIO</text>
+            </svg>
+        </div>
+        <h1>Panel de Control</h1>
+    </header>
+
+    <main>
+        <div class="table-container">
+            <div class="card-header">
+                <h2>Inventario de Ingredientes</h2>
+                <button id="btn-recargar" class="btn-icon">↻</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-left">Nombre</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+                    <tr>
+                        <td>Aceite</td>
+                        <td class="actions">
+                            <button class="btn btn-edit" onclick="editarItem('Aceite')">Editar</button>
+                            <button class="btn btn-delete" onclick="borrarItem('Aceite')">Borrar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Harina 000</td>
+                        <td class="actions">
+                            <button class="btn btn-edit" onclick="editarItem('Harina')">Editar</button>
+                            <button class="btn btn-delete" onclick="borrarItem('Harina')">Borrar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
