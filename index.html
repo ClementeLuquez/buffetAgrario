@@ -896,6 +896,19 @@
 
   </main>
 
+  <!-- Modal de advertencia de precios -->
+  <div id="modal-precios" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">Atención</div>
+      <p style="margin:0 0 16px; font-size:0.95rem; color: var(--md3-on-surface-variant);">
+        Los precios pueden estar desactualizados o contener errores.
+      </p>
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:8px;">
+        <button id="btn-cerrar-modal-precios" class="btn btn-primary">Entendido</button>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -1295,6 +1308,31 @@
       }
     }
 
+    function mostrarModalPrecios() {
+      const overlay = document.getElementById('modal-precios');
+      const btnCerrar = document.getElementById('btn-cerrar-modal-precios');
+      if (!overlay || !btnCerrar) return;
+
+      overlay.classList.add('show');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+
+      const cerrar = () => {
+        overlay.classList.remove('show');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        btnCerrar.removeEventListener('click', cerrar);
+        overlay.removeEventListener('click', onOverlayClick);
+      };
+
+      const onOverlayClick = (e) => {
+        if (e.target === overlay) cerrar();
+      };
+
+      btnCerrar.addEventListener('click', cerrar);
+      overlay.addEventListener('click', onOverlayClick);
+    }
+
     // Función que puede llamar Flutter o el propio JS al tener los datos
     function recibirDatosDesdeBackend(texto) {
       try {
@@ -1336,6 +1374,8 @@
               loader.classList.add('hidden');
               setTimeout(() => {
                 loader.style.display = 'none';
+                // Mostrar advertencia sobre precios después de ocultar el loader
+                mostrarModalPrecios();
               }, 500);
             }, 500);
           }
@@ -1352,6 +1392,8 @@
               loader.classList.add('hidden');
               setTimeout(() => {
                 loader.style.display = 'none';
+                // Aunque haya error, mostramos igualmente la advertencia
+                mostrarModalPrecios();
               }, 500);
             }, 500);
           }
