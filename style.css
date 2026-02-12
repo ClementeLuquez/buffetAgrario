@@ -1,116 +1,186 @@
-/* Variables de color */
+/* RESET Y VARIABLES */
 :root {
-    --bg-dark: #121212;      /* Fondo de la web */
-    --primary-red: #b71c1c;  /* Rojo Agrario */
-    --card-bg: #fff5f5;      /* Fondo rosado de la tabla */
-    --header-pink: #ffcdd2;  /* Encabezado tabla */
-    --text-dark: #3e2723;
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --primary-red: #b71c1c;
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-main);
     background-color: var(--bg-dark);
-    margin: 0;
-    padding: 20px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: var(--text-white);
+    line-height: 1.6;
 }
 
-/* Header y Logo */
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.logo-svg {
-    width: 120px;
-    height: 120px;
-    filter: drop-shadow(0 0 10px rgba(183, 28, 28, 0.5)); /* Resplandor rojo */
-}
-
-h1 {
-    margin-top: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* Tarjeta de la Tabla */
-.table-container {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 20px;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
-    color: var(--text-dark); /* Texto oscuro dentro de la tarjeta clara */
-}
-
-.card-header {
+/* NAVBAR */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--primary-red);
+    padding: 20px 5%;
+    background-color: rgba(18, 18, 18, 0.95); /* Semitransparente */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
 }
 
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-}
-
-/* Estilos de Tabla (Tus preferidos) */
-thead th {
-    background-color: var(--header-pink);
-    color: var(--primary-red);
-    padding: 15px;
-    font-weight: 700;
-}
-
-thead tr:first-child th:first-child { border-top-left-radius: 10px; }
-thead tr:first-child th:last-child { border-top-right-radius: 10px; }
-
-tbody td {
-    padding: 15px;
-    border-bottom: 1px solid #ffebee;
-}
-
-/* Botones */
-.actions {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-.btn {
-    background-color: white;
-    border: 2px solid;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-edit {
-    color: #4CAF50;
-    border-color: #4CAF50;
-}
-.btn-edit:hover { background-color: #4CAF50; color: white; }
-
-.btn-delete {
-    color: #d32f2f;
-    border-color: #d32f2f;
-}
-.btn-delete:hover { background-color: #d32f2f; color: white; }
-
-.btn-icon {
-    background: none;
-    border: none;
+.logo {
     font-size: 1.5rem;
-    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.dot { color: var(--primary-red); }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary-red); }
+
+.btn-reservar {
+    background-color: var(--primary-red);
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1514362545857-3bc16549766b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.highlight { color: var(--primary-red); }
+
+.btn-cta {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px solid var(--primary-red);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: var(--primary-red);
+}
+
+/* MENU GRID */
+.menu-section {
+    padding: 80px 5%;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary-red);
+    padding-left: 15px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* CARDS (TARJETAS) */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-red);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag.vegan { background-color: #4CAF50; }
+
+.card-info {
+    padding: 25px;
+}
+
+.card-info h3 { margin-bottom: 10px; font-size: 1.3rem; }
+
+.card-info p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--primary-red);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #333;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* MOVIL */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* En una versión real agregaríamos menú hamburguesa */
+    .hero h1 { font-size: 2.5rem; }
 }
