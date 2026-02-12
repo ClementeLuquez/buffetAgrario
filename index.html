@@ -1,86 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú | Agrario Buffet</title>
+    <title>Menú Agrario</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo">AGRARIO<span class="dot">.</span></div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#platos">Platos</a></li>
-            <li><a href="#postres">Postres</a></li>
-            <li><a href="#contacto" class="btn-reservar">Reservar</a></li>
-        </ul>
-    </nav>
+    <div class="menu-frame">
 
-    <header id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Sabor Real, <br>Cocina <span class="highlight">Artesanal</span></h1>
-            <p>Disfruta de la mejor selección de ingredientes frescos en un ambiente único.</p>
-            <a href="#platos" class="btn-cta">Ver Menú</a>
-        </div>
-    </header>
+        <div class="deco-top-left"></div>
+        <div class="deco-bottom-right"></div>
 
-    <section id="platos" class="menu-section">
-        <h2 class="section-title">Platos Principales</h2>
-        
-        <div class="menu-grid">
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c');">
-                    <span class="tag">Destacado</span>
-                </div>
-                <div class="card-info">
-                    <h3>Ensalada César Agraria</h3>
-                    <p>Lechuga hidropónica, crutones caseros, parmesano y aderezo secreto.</p>
-                    <div class="price">$5.500</div>
-                </div>
+        <header class="menu-header">
+            <div class="banner-wrapper">
+                <h1 class="menu-title">MENU</h1>
+                <div class="banner-ends"></div>
             </div>
+            <p class="subtitle">Sabores de la Huerta</p>
+        </header>
 
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1');"></div>
-                <div class="card-info">
-                    <h3>Asado al Asador</h3>
-                    <p>Costillar de ternera cocinado a leña durante 4 horas con salsa criolla.</p>
-                    <div class="price">$12.000</div>
-                </div>
-            </div>
+        <main id="menu-container">
+        </main>
 
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38');">
-                    <span class="tag vegan">Vegano</span>
-                </div>
-                <div class="card-info">
-                    <h3>Pizza de Masa Madre</h3>
-                    <p>Fermentación de 48hs, salsa de tomates orgánicos y albahaca fresca.</p>
-                    <div class="price">$8.200</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <section id="postres" class="menu-section">
-        <h2 class="section-title">Postres</h2>
-        <div class="menu-grid">
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e');"></div>
-                <div class="card-info">
-                    <h3>Cheesecake de Frutos Rojos</h3>
-                    <p>Base de galleta de chocolate con mermelada casera de la huerta.</p>
-                    <div class="price">$4.500</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Agrario Buffet - Tres Arroyos</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
